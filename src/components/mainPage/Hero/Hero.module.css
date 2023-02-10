@@ -1,0 +1,161 @@
+
+
+.hero {
+   overflow: hidden;
+   box-sizing:border-box;
+   height: 100vh;
+}
+
+.backgroundImg {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: scale(1.02);
+    background-image: url('./../../../assets/hero-3.jpg');
+    height: 100vh;
+    z-index: -1;
+}
+
+.heroCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff00;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 125%;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+
+.descr {
+    font-family: 'Poppins';
+    font-weight: 300;
+    font-size:24px;
+    line-height: 155%;
+    text-align: center;
+    color: #FFFFFF;
+    max-width: 500px;
+}
+
+
+.link {
+    position: relative;
+    color: #ffffff93;
+}
+
+
+
+.link {
+    margin-top: 10px;
+  height: 30px;
+  align-items: center;
+  text-decoration: none;
+  display: flex;
+}
+
+/* Hide extra text */
+.mask {
+  position: relative;
+  padding: 0;
+  height: 20px;
+
+  /*  Remove overflow to see how it works　:) */
+  overflow: hidden;
+}
+
+.linkContainer {
+  transition: transform 0.4s ease;
+}
+
+
+
+.linkTitle1 {
+  transform-origin: right center;
+  display: block;
+text-transform: lowercase;
+  /*  Set same font-size and line height  */
+  font-size: 17px;
+  line-height: 17px;
+
+  transition: transform 0.4s ease;
+}
+
+.linkTitle2 {
+  transform-origin: left center;
+  display: block;
+  text-transform: lowercase;
+
+  /*  Set same font-size and line height  */
+  font-size: 17px;
+  line-height: 17px;
+
+  transition: transform 0.4s ease;
+  transform: rotate(20deg);
+}
+
+.linkIcon {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+
+  /*  Remove overflow to see how it works　:) */
+  overflow: hidden;
+}
+
+.icon {
+  display: block;
+  position: absolute;
+  transition: transform 0.4s ease;
+}
+
+.icon:nth-child(2) {
+  transform: translate(-40px);
+}
+
+/* Hover Action*/
+
+/* Move up two texts (20px = font-size) */
+.link:hover .link-container {
+  transform: translateY(-20px);
+}
+
+/* Rotate texts a little bit */
+.link:hover .link-title1 {
+  transform: rotate(20deg);
+}
+
+.link:hover .link-title2 {
+  transform: rotate(0);
+}
+
+/* Move arrows to right */
+.link:hover .icon:first-child {
+  transform: translate(40px);
+}
+
+.link:hover .icon:nth-child(2) {
+  transform: translate(0px);
+}

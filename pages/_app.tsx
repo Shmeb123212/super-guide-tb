@@ -1,5 +1,14 @@
 import type { AppProps } from 'next/app'
+import './../styles/normalize.css'
+import './../styles/global.css'
+import { wrapper } from '@/redux/store'
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+  
+      <Component {...pageProps} />
+ 
+  )
 }
+
+export default wrapper.withRedux(MyApp)

@@ -1,0 +1,106 @@
+
+:root .header {
+    animation-play-state: paused;
+    /* Bind the animation to scroll */
+    animation-delay: calc(var(--scroll) * -1s);
+    /* These last 2 properites clean up overshoot weirdness */
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    height:100%;
+    max-height: 115px;
+    width: 100%;
+    z-index: 100;
+    animation: header 1s linear;
+}
+
+@keyframes header {
+    to {
+        background-color: #fff;
+        max-height: 75px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.blur {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+} 
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.headInfo {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, auto);
+    gap: 45px;
+    justify-content: end;
+}
+
+.logo {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 72px;
+    color: #FFFFFF;
+    transition: all .35s ease-in-out;
+
+}
+
+
+.navList {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 25px;
+    align-items: center;
+}
+
+.navItem {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 120%;
+    color: #FFFFFF;
+    transition: all .35s ease-in-out;
+    animation: navItems 1s linear;
+}
+
+
+.active .navItem {
+    color: var(--text-color);
+}
+
+.active .logo {
+    color: var(--text-color);
+}
+
+.socialBlock {
+    width: 32px;
+    height: 32px;
+
+}
+
+.inst {
+    
+} 
