@@ -8,6 +8,15 @@
     animation-fill-mode: both;
 }
 
+:root .blur {
+    animation-play-state: paused;
+    /* Bind the animation to scroll */
+    animation-delay: calc(var(--scroll) * -1s);
+    /* These last 2 properites clean up overshoot weirdness */
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
 .header {
     position: fixed;
     top: 0;
@@ -15,14 +24,61 @@
     max-height: 115px;
     width: 100%;
     z-index: 100;
+    transition: all .5s;
     animation: header 1s linear;
+    overflow: hidden;
+}
+
+.logoBlock {
+    position: relative;
+    transition: .4s all ease-in-out;
+}
+
+.logoImg {
+    position: absolute;
+    
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('./../../../assets/logo-site.svg');
+    transition: all .4s;
+    opacity: 0;
+}
+
+
+.activeWhite {
+    background-color: #fff;
+}
+
+.active .logoImg {
+    opacity: 1;
 }
 
 @keyframes header {
     to {
+        max-height: 85px;
+        box-shadow: rgba(190, 190, 190, 0.336) 0px 12px 29px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+}
+
+.blur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(0px);
+    z-index: -1;
+    animation: blur 1s linear;
+}
+
+@keyframes blur {
+    to {
+        backdrop-filter: blur(5px);
         background-color: #fff;
-        max-height: 75px;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     }
 }
 
@@ -31,6 +87,7 @@
     display: flex;
     align-items: center;
     height: 100%;
+    z-index: 1;
 }
 
 .blur {
@@ -61,9 +118,9 @@
     font-style: normal;
     font-weight: 500;
     font-size: 48px;
-    line-height: 72px;
+    line-height: 100%;
     color: #FFFFFF;
-    transition: all .35s ease-in-out;
+    transition: all .4s ease-in-out;
 
 }
 
@@ -80,10 +137,16 @@
     font-style: normal;
     font-weight: 500;
     font-size: 22px;
+    padding: 2px 15px;
     line-height: 120%;
+    border-radius:15px;
     color: #FFFFFF;
-    transition: all .35s ease-in-out;
+    transition: all .4s ease-in-out;
     animation: navItems 1s linear;
+}
+
+.navItem:hover {
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
 }
 
 
@@ -91,16 +154,49 @@
     color: var(--text-color);
 }
 
+.active .navItem:hover {
+    box-shadow: rgba(61, 56, 56, 0.2) 0px 7px 29px 0px;
+
+}
+
+
 .active .logo {
-    color: var(--text-color);
+    color: #00000000;
 }
 
-.socialBlock {
-    width: 32px;
-    height: 32px;
-
-}
 
 .inst {
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    transition: all .4s ease-in-out;
+    border-radius: 50%;
+   
+    width: 50px;
+    height: 50px;
 } 
+
+.socialLogo {
+    display: inline-block;
+    width: 100%;height: 100%;
+    max-width: 35px;
+    max-height: 35px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('./../../../assets/inst.svg');
+    border: 2px solid #ffffff00;
+    transition: .4s all ease-in-out;
+}
+
+.active .socialLogo {
+    border: 2px solid #ffffff00;
+  
+
+    background-image: url('./../../../assets/logo-tg.svg');
+}
+
+.active .inst {
+    box-shadow: rgba(77, 73, 73, 0.282) 0px 7px 29px 0px;
+    border-radius: 50%;
+}

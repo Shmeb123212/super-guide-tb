@@ -1,11 +1,15 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import { test } from "./test-reducer";
+import { tripSelects } from "./findTrip-reducer";
+import {monthsReducer} from './months-reducer'
+import {personInfoReducer} from './personInfo-reducer';
 import { createWrapper } from "next-redux-wrapper";
 
 const makeStore = () =>
   configureStore({
     reducer: {
-      [test.name]: test.reducer,
+      [tripSelects.name]: tripSelects.reducer,
+      [monthsReducer.name]:monthsReducer.reducer,
+      [personInfoReducer.name]: personInfoReducer.reducer,
     },
     devTools: true,
   });

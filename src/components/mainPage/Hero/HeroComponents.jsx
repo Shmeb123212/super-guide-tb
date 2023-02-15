@@ -1,16 +1,11 @@
 import React from 'react'
 import cl from './Hero.module.css'
 import Link from 'next/link'
-import { useSelector, useDispatch } from 'react-redux'
-import { setTestState } from '@/redux/test-reducer'
 
 export default function HeroComponents() {
-  const state = useSelector(state=>state)
-  const dispatch =  useDispatch()
-  dispatch(setTestState(true))
-  console.log(state)
+  
   return (
-    <div className={cl.hero}>
+    <section className={cl.hero}>
       <div className={cl.backgroundImg}></div>
         <div className={["container", cl.heroCont].join` `}>
           <div className={cl.content}>
@@ -36,6 +31,6 @@ export default function HeroComponents() {
             </Link>
           </div>
         </div>
-    </div>
+    </section>
   )
 }

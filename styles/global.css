@@ -9,9 +9,9 @@
 
 :root {
     --white: #fff;
-    --green: #06d6a0;
+    --green: #43B97F;
     --grey: #7c7c7c;
-	--text-color: #3D3E48
+	--text-color: #3D3E48;
 }
 
 body {
@@ -47,5 +47,4 @@ body::-webkit-scrollbar-thumb
     padding: 0 15px;
     margin: 0 auto;
 }
-
 

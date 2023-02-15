@@ -1,0 +1,25 @@
+
+
+
+.select {
+    padding: 20px;
+}
+
+
+.selectList {
+    display: grid;
+    grid-template-rows: repeat(5, auto);
+    gap: 3px;
+}
+
+
+.item {
+    padding: 4px 7px;
+    transition: all .25s ease-in-out;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.item:hover {
+    box-shadow: rgba(96, 96, 102, 0.265) 0px 7px 29px 0px;
+}
