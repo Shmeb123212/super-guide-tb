@@ -16,6 +16,7 @@
 
 body {
     font-family: 'Poppins', serif;
+    overflow-y: scroll;
 }
 
 body::-webkit-scrollbar-track
@@ -48,3 +49,15 @@ body::-webkit-scrollbar-thumb
     margin: 0 auto;
 }
 
+
+.top-title {
+    color: var(--green);
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.title-comp {
+	font-size: 36px;
+    color: var(--text-color);
+    font-weight: 600;
+}

@@ -1,0 +1,38 @@
+
+
+
+.footer {
+    padding: 25px 0;
+    background-color: #ffffff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+
+
+.content {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.logoImg {
+    
+    /* display: block;
+    height: 40px;
+    width: 280px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('./../../assets/footer-slogan.svg');
+    transition: all .4s; */
+}
+
+
+.authDescr {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 42px;
+
+    color: rgba(0, 0, 0, 0.5);
+}

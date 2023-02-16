@@ -3,6 +3,8 @@ import { tripSelects } from "./findTrip-reducer";
 import {monthsReducer} from './months-reducer'
 import {personInfoReducer} from './personInfo-reducer';
 import { createWrapper } from "next-redux-wrapper";
+import { aboutReducer } from './about-reducer';
+import { reviewsReducer } from './reviews-reducer';
 
 const makeStore = () =>
   configureStore({
@@ -10,6 +12,8 @@ const makeStore = () =>
       [tripSelects.name]: tripSelects.reducer,
       [monthsReducer.name]:monthsReducer.reducer,
       [personInfoReducer.name]: personInfoReducer.reducer,
+      [aboutReducer.name]: aboutReducer.reducer,
+      [reviewsReducer.name]: reviewsReducer.reducer, 
     },
     devTools: true,
   });

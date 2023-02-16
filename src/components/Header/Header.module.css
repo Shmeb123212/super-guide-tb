@@ -17,6 +17,19 @@
     animation-fill-mode: both;
 }
 
+.pages {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    transition: all .5s;
+    height: 85px;
+    box-shadow: rgba(190, 190, 190, 0.336) 0px 12px 29px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #fff;
+}
+
 .header {
     position: fixed;
     top: 0;
@@ -43,7 +56,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    background-image: url('./../../../assets/logo-site.svg');
+    background-image: url('./../../assets/logo-site.svg');
     transition: all .4s;
     opacity: 0;
 }
@@ -184,7 +197,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    background-image: url('./../../../assets/inst.svg');
+    background-image: url('./../../assets/inst.svg');
     border: 2px solid #ffffff00;
     transition: .4s all ease-in-out;
 }
@@ -193,7 +206,7 @@
     border: 2px solid #ffffff00;
   
 
-    background-image: url('./../../../assets/logo-tg.svg');
+    background-image: url('./../../assets/logo-tg.svg');
 }
 
 .active .inst {

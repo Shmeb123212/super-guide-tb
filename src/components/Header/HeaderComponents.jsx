@@ -2,12 +2,12 @@ import React, { useEffect, useMemo, useRef, useState } from 'react'
 import cl from './Header.module.css'
 import Link from 'next/link'
 
-export default function HeaderComponents() {
+export default function HeaderComponents({isMain}) {
   const headerRef = useRef('');
   const blurRef = useRef('');
 
   useEffect(()=>{
-    window.addEventListener('scroll', () => {
+    isMain && window.addEventListener('scroll', () => {
       if(headerRef.current !== null) {
         headerRef.current.style.setProperty('--scroll',window.pageYOffset / 200);
 
@@ -30,15 +30,17 @@ export default function HeaderComponents() {
 
 
   return (
-    <header ref={headerRef} className={cl.header}>
+    <header ref={headerRef} className={isMain ? cl.header: [, cl.active, cl.pages].join` `}>
       <div ref={blurRef} className={cl.blur}></div>
       <div className={cl.wrapper}>
       <span className={cl.blur}></span>
         <div className={["container", cl.container].join` `}>
-          <div className={cl.logoBlock}>
-              <span className={cl.logoImg}></span>
-              <span className={cl.logo}>Super Guide</span>
-          </div>
+          <Link href={'/'}>
+            <div className={cl.logoBlock}>
+                <span className={cl.logoImg}></span>
+                <span className={cl.logo}>Super Guide</span>
+            </div>
+          </Link>
           <div className={cl.headInfo}>
             <div className={cl.navBlock}>
               <nav className={cl.nav}>

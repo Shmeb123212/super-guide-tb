@@ -1,0 +1,23 @@
+
+
+.section {
+    min-height: 90vh;
+    padding-top: 120px;
+}
+
+
+.topTitle {
+    margin-bottom: 25px;
+}
+
+.title {
+    margin-bottom: 50px;
+}
+
+.descr {
+    line-height: 200%;
+    max-width: 85%;
+    font-size: 22px;
+    color: #333;
+}
+
