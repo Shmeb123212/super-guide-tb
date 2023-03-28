@@ -1,13 +1,9 @@
 import React from 'react'
-import cl from './Destination.module.css'
-import Link from 'next/link'
+import cl from './TripPageComp.module.css'
 
-
-export default function DestinationItem({hrefImg = '#',linkItem, titleItem, priceCount, daysItem, itemClass}) {
-  
+export default function TripPageItem({idItem,setActiveTariff,hrefImg, titleItem, priceCount, daysItem, itemClass, setIsModal ,isModal}) {
     return (
-    <Link href={linkItem}>
-        <li className={[cl.itemDest, itemClass].join` `}>
+        <li className={[cl.itemDest, itemClass].join` `} onClick={e=>{setIsModal(!isModal);setActiveTariff(idItem);}}>
             <div className={cl.imgBlock}>
                 <img src={hrefImg} alt="" className={cl.img} />
                 <span className={cl.imgRec}>Recommended</span>
@@ -21,6 +17,5 @@ export default function DestinationItem({hrefImg = '#',linkItem, titleItem, pric
                 </div>
             </div>
         </li>
-    </Link>
-  )
+    )
 }

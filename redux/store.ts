@@ -5,6 +5,7 @@ import {personInfoReducer} from './personInfo-reducer';
 import { createWrapper } from "next-redux-wrapper";
 import { aboutReducer } from './about-reducer';
 import { reviewsReducer } from './reviews-reducer';
+import {TripsReducer} from './trips-reducer';
 
 const makeStore = () =>
   configureStore({
@@ -14,6 +15,7 @@ const makeStore = () =>
       [personInfoReducer.name]: personInfoReducer.reducer,
       [aboutReducer.name]: aboutReducer.reducer,
       [reviewsReducer.name]: reviewsReducer.reducer, 
+      [TripsReducer.name]: TripsReducer.reducer,
     },
     devTools: true,
   });

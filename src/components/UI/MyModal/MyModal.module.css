@@ -1,0 +1,295 @@
+
+
+
+.modalBlock {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    pointer-events: none;
+    background-color: #0000006c;
+    opacity: 0;
+    z-index: 150;
+    transition: .35s;
+}
+
+.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+.modalContent {
+    position: relative;
+    width: 500px;
+    padding: 45px 65px;
+    min-height: 350px;
+    background-color: #fff;
+    border-radius: 20px;
+    transition: all .45s ease-in-out;
+    transform: translateX(70px);
+}
+
+.active .modalContent {
+    transform: none;
+}
+
+
+.modalBlock::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 10px rgba(152, 152, 152, 0.3);
+	background-color: rgba(69, 69, 69, 0.497);
+	border-radius: 10px;
+}
+
+.modalBlock::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #ffffff;
+}
+
+.modalBlock::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, #6c757d),
+									   color-stop(0.72, #495057),
+									   color-stop(0.86, #343a40));
+}
+
+.modalCloseBlock {
+    position: absolute;
+   
+    top: 20px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+}
+
+.modalClosse {
+    width: 
+    100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.lineHor {
+    display: inline-block;
+    position: absolute;
+    top: 0;right: 0;left: 0;bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 2px;
+    border-radius: 4px;
+    background-color: #acacac;
+    transform: rotate(-45deg);
+}
+
+.lineVer {
+    display: inline-block;
+    position: absolute;
+    top: 0;right: 0;left: 0;bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 2px;
+    border-radius: 4px;
+
+    background-color: #acacac;
+    transform: rotate(45deg);
+}
+
+
+.listTrips {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    row-gap: 40px;
+    column-gap: 20px;
+}
+
+.itemTrip {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    min-height: 50px;
+    align-items: center;
+}
+
+.itemContent {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    gap: 15px;
+    position: relative;
+    max-width: 100%;
+}
+.itemBtn {
+    display: block;
+}
+.titleItem {
+    display: grid;
+    grid-template-columns: 30px auto;
+    gap: 8px;
+    align-items: center;
+    justify-content: start;
+    color:var(--grey);
+    font-size: 14px;
+}
+
+
+.titleImg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 26px;
+    height: 26px;
+}
+
+
+.locationImg {
+    background-image: url('./../../../assets/location-mark.svg');
+}
+.personImg {
+    background-image: url('./../../../assets/user.svg');
+    transform: scale(1.2);
+}
+.checkInImg, .checkOutImg {
+    background-image: url('./../../../assets/calendar.svg');
+}
+
+
+
+.line {
+   
+}
+
+.selectHead {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 17px;
+    gap: 10px;
+    align-items: center;
+    max-width: 145px;
+    cursor: pointer;
+}
+
+.select {
+    position: relative;
+}
+
+
+.selectBody {
+    position: relative;
+    width: 100%;
+    z-index: 5;
+}
+
+.bodyContent {
+    position: absolute;
+    top: 0;bottom: -200px;right: 0;left: -50px;
+    margin: auto;
+    width: 275px;
+    height: 275px;
+    background-color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    transform: translateY(50px);
+    transition: all .35s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.selectValues {
+    position: absolute;
+    top: 0;bottom: -110px;right: 0;left: -25px;
+    margin: auto;
+    width: 150px;
+    min-height: 150px;
+    overflow-y: auto;
+    background-color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    transform: translateY(50px);
+    transition: all .35s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.selectValues::-webkit-scrollbar {
+    width: 3px;
+    background-color: #fff;
+}
+
+.selectValues::-webkit-scrollbar-track {
+	background-color: #ffffff;
+	border-radius: 5px;
+}
+
+.selectValues::-webkit-scrollbar {
+	width: 4px;
+	background-color: #ffffff;
+}
+
+.selectValues::-webkit-scrollbar-thumb {
+    width: 3px;
+    background-color: #c8c4c4;
+	border-radius: 5px;
+
+}
+
+.activeSelectTime {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+
+
+.tripBtn {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: #43B97F;
+    border-radius: 5px;
+    color:#fff;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+
+    letter-spacing: 1px;
+}
+
+
+
+.tripBtn .textBtn {
+    z-index: 20;
+}
+
+.leftThing {
+    background: #fff;
+    backdrop-filter:blur(10px);
+    content: "";
+    height: 155px;
+    left: -75px;
+    opacity: .2;
+    position: absolute;
+    top: -50px;
+    transform: rotate(35deg);
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    width: 50px;
+    z-index: 1;
+}
+
+.tripBtn:hover  .leftThing  {
+    left: 120%;
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+}

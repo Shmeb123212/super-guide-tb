@@ -14,7 +14,7 @@ const TravelerPoint = () => {
                     <p className={['top-title',cl.topTitle].join` `}>Traveler Point</p>
                     <h2 className={['title-comp',cl.title].join` `}>We helping you find your dream vacation</h2>
                     <p className={cl.descr}>
-                    The official website of Georgia's tourism board offers comprehensive information on destinations, activities, accommodations, and events in the state. From the stunning mountains to the charming towns, visitors can find everything they need to plan a perfect trip to Georgia.
+                    {`The official website of Georgia's tourism board offers comprehensive information on destinations, activities, accommodations, and events in the state. From the stunning mountains to the charming towns, visitors can find everything they need to plan a perfect trip to Georgia.`}
                     </p>
                     <ul className={cl.countsList}>
                         <li className={cl.countsItem}>

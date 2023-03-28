@@ -16,7 +16,7 @@ export default function ReviewsPage() {
                     <ul className={cl.list}>
                         {stateReviews.map((e,i)=>{
                             return (
-                                <ReviewsItem  initials={e.initials} imgHref={e.imgHref}  userReview={e.userText}/>
+                                <ReviewsItem key={i} initials={e.initials} imgHref={e.imgHref}  userReview={e.userText}/>
                             )
                         })}
                     </ul>

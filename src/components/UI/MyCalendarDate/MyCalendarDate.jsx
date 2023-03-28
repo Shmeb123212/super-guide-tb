@@ -53,9 +53,9 @@ const MyCalendarDate = ({isActive, setIsActive, setIsCalendar, isCalendar}) => {
     <div ref={dateElement} className={cl.calendarDates}>
         {filledArr.map((e,i,arr)=>{
             if (i < currentDate.startOf("month").day()) {
-                return <button className={[cl.calendarDatesDayEmpty, cl.dates].join` `}></button>
+                return <button key={i} className={[cl.calendarDatesDayEmpty, cl.dates].join` `}></button>
             } else {
-                return <button className={[cl.calendarDatesDay, cl.dates].join` `} onClick={e=>{setIsActive({...isActive[0], [isActive[1]]: !{...isActive[0]}[isActive[1]]});setIsCalendar(`${e.target.textContent} ${monthNames[currentDate.month()]} ${currentDate.year()}`)}}>{i+1-currentDate.startOf("month").day()}</button>
+                return <button key={i} className={[cl.calendarDatesDay, cl.dates].join` `} onClick={e=>{setIsActive({...isActive[0], [isActive[1]]: !{...isActive[0]}[isActive[1]]});setIsCalendar(`${e.target.textContent} ${monthNames[currentDate.month()]} ${currentDate.year()}`)}}>{i+1-currentDate.startOf("month").day()}</button>
             }
             
         })}
